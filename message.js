@@ -7,6 +7,7 @@ class Message {
     }
     this.commands = commands;
     }
+     //remember that a class can be thought of as instructions for how to build the objects with that class name
    }
 
 
