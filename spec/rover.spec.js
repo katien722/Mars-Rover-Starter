@@ -38,10 +38,11 @@ describe("Rover class", function () {
     let message = new Message('Test message with two commands', commands);
     let rover = new Rover(98382);    
     let response = rover.receiveMessage(message);
-    expect(response.message).toEqual(message, )  //needs two results if two commands....hmmmmmm??
+    expect(response.commands).toEqual(message.commands)  //needs two results if two commands....hmmmmmm??
   })
 
   //TEST 10
+  
 
 
   //TEST 11

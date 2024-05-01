@@ -8,7 +8,8 @@ this.position = position;
    }
 receiveMessage(message) {
    let returnResponse = {
-      message: message.name
+      message: message.name,
+      commands: message.commands,
       // results : [array] ....
       
       //write more code in here
@@ -28,7 +29,6 @@ receiveMessage(message) {
 
 
 }
-
 
 }
 
