@@ -34,15 +34,25 @@ describe("Rover class", function () {
 
   //TEST 9
   it("response returned by receiveMessage includes two results if two commands are sent in the message", function() {
-    let commands = [new Command('MODE_CHANGE', 'LOW_POWER'), new Command('STATUS_CHECK')];//needed again bc local scope in test 8?
+    let commands = [new Command('MODE_CHANGE', 'LOW_POWER'), new Command('STATUS_CHECK')];
     let message = new Message('Test message with two commands', commands);
     let rover = new Rover(98382);    
     let response = rover.receiveMessage(message);
-    expect(response.commands).toEqual(message.commands)  //needs two results if two commands....hmmmmmm??
+    expect(response.results.length) .toEqual(message.commands.length)  
   })
 
   //TEST 10
-  
+  it("responds correctly to the status check command", function() {
+    let commands = [new Command('MODE_CHANGE', 'LOW_POWER'), new Command('STATUS_CHECK')];
+    let message = new Message('Test message with two commands', commands);
+    let rover = new Rover(98382);    
+    let response = rover.receiveMessage(message);
+    expect(response.results[1]).toEqual( {
+      completed: true,
+      roverStatus: { mode: rover.mode, generatorWatts: rover.generatorWatts, position: rover.position }
+   })
+
+  })
 
 
   //TEST 11
