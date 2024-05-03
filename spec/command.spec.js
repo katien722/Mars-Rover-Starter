@@ -1,7 +1,5 @@
 const Command = require('../command.js');
 
-// NOTE: If at any time, you want to focus on the output from a single test, feel free to comment out all the others.
-//       However, do NOT edit the grading tests for any reason and make sure to un-comment out your code to get the autograder to pass.
 
 describe("Command class", function() {
 //TEST 1
@@ -9,7 +7,7 @@ describe("Command class", function() {
     expect( function() { new Command();}).toThrow(new Error('Command type required.'));
   });
 
-  //TEST2 below:
+  //TEST 2 below:
   it("constructor sets command type", function() {
     let command = new Command("commandType")
     expect(command.commandType).toEqual("commandType")
