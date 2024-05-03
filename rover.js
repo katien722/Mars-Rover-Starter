@@ -58,7 +58,6 @@ class Rover {
 
          }
 
-
       }
       return returnResponse
    }
